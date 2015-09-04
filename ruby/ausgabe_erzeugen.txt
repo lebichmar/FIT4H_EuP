@@ -1,0 +1,8 @@
+Soll auf der Konsole eine Ausgabe erzeugt werden, geschieht das über den Befehl
+	puts <String>
+
+	puts "irgendetwas"		#Ausgabe eines Strings
+	puts variablenname		#Ausgabe einer Variable in der ein String ist
+
+	zahl = 15
+	puts zahl.to_s
