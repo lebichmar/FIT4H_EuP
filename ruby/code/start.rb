@@ -12,7 +12,7 @@ puts zahl
 #Zusammengesetzte String:
 puts str + zahl.to_s 
 
-puts "#{str} der #{zahl}. im Monat"
+puts "#{str} der #{zahl}. im Monat"					#Anführungszeichen sind zwingend notwendig, #{zahl} sind interne Rubybefehle
 tag = "Freitag"
 puts "Heute ist #{tag}, der #{Time.new}."
 
