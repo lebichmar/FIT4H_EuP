@@ -3,7 +3,7 @@ Die Klassen bieten für die Objekte Methoden an.
 
 var = "Teststring"
 var.class
-	#Die Methode class auf das Objekt var angewandt gibt die Klasse des Objektes aus.
+	#Die Methode class auf das Objekt var angewandt, gibt die Klasse des Objektes aus.
 
 var.reverse
 	#Methode reverse auf var angewandt erzeugt eine Ausgabe, in der der String umgekehrt angezeigt wird. Der Wert der Variable var ändert sich nicht.
