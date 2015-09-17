@@ -71,35 +71,49 @@
 
 # ####################################################
 
-# class Movie
-# 		def initialize(ptitle, prank=0)	
-# 			@title = ptitle.capitalize
-# 			@rank  = prank
-# 		end
+class Movie
+		def initialize(ptitle, prank=0)	
+			@title = ptitle.capitalize
+			@rank  = prank
+		end
+
+		# def title
+		# 	@title
+		# end
+		attr_reader :title 	#ist eine Methode, die jeder Klasse zur Verfügung steht
+												#macht das gleiche wie def title
+
+		# def title=(ptitle)
+		# 	@title = ptitle
+		# end
+		attr_writer :title	#ist eine Methode, die jeder Klasse zur Verfügung steht
+												#macht das gleiche wie def title=
+
+		def thumps_up
+			@rank+= 1
+			#@rank = @rank + 1
+		end
+
+		def thumps_down
+			@rank-= 1
+			#@rank = @rank - 1
+		end
+
+		def to_s
+			"#{@title} hat ein Ranking von: #{@rank}."
+		end
 
 
-# 		def thumps_up
-# 			@rank+= 1
-# 			#@rank = @rank + 1
-# 		end
-
-# 		def thumps_up
-# 			@rank-= 1
-# 			#@rank = @rank - 1
-# 		end
-
-# 		def to_s
-# 			"#{@title} hat ein Ranking von: #{@rank}."
-# 		end
-
-
-# 	end
+	end
 	
 
-# 	obj_movie1 = Movie.new('TMNT', 4)
-# 	puts obj_movie1.to_S
+	obj_movie1 = Movie.new('TMNT', 4)
+	puts obj_movie1.to_s
 	
-# 	obj_movie1.thumps_up
-# 	puts obj_movie1.to_S
+	obj_movie1.thumps_up
+	puts obj_movie1.to_s
 
+	puts obj_movie1.title
+	obj_movie1.title = "NinjaPurples"
+	puts obj_movie1
 # 	#####################################################
