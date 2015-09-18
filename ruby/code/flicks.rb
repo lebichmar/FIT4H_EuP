@@ -72,22 +72,27 @@
 # ####################################################
 
 class Movie
+	#	attr_writer :title				#ist eine Methode, die jeder Klasse zur Verfügung steht
+															#macht das gleiche wie def title=
+	#	attr_reader :title 				#ist eine Methode, die jeder Klasse zur Verfügung steht
+															#macht das gleiche wie def title
+		attr_accessor :title			#Kurzform von attr_writer/reader
+
+		# def title
+		# 	@title
+		# end
+		
+		# def title=(ptitle)
+		# 	@title = ptitle
+		# end
+
 		def initialize(ptitle, prank=0)	
 			@title = ptitle.capitalize
 			@rank  = prank
 		end
 
-		# def title
-		# 	@title
-		# end
-		attr_reader :title 	#ist eine Methode, die jeder Klasse zur Verfügung steht
-												#macht das gleiche wie def title
-
-		# def title=(ptitle)
-		# 	@title = ptitle
-		# end
-		attr_writer :title	#ist eine Methode, die jeder Klasse zur Verfügung steht
-												#macht das gleiche wie def title=
+		
+		
 
 		def thumps_up
 			@rank+= 1
@@ -115,5 +120,7 @@ class Movie
 
 	puts obj_movie1.title
 	obj_movie1.title = "NinjaPurples"
+	obj_movie1.title = "NinjaPurples"
 	puts obj_movie1
-# 	#####################################################
+
+######################################################
