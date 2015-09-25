@@ -1,4 +1,5 @@
 1. Legen Sie ein Array an mit den Zahlen 15 bis 20 an.
+(15..20).to_a
 
 a. geben Sie diese Zahlen in einem Block aus
 b. geben Sie die Zahlen mit dem Index etwa so aus: Index: 0 - Wert: 15
