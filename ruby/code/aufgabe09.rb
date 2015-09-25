@@ -1,12 +1,19 @@
 # 1. Legen Sie ein Array an mit den Zahlen 15 bis 20 an.
-(15..20).to_a
+array1 = (15..20).to_a
 
 # a. geben Sie diese Zahlen in einem Block aus
-
+puts array1
 # b. geben Sie die Zahlen mit dem Index etwa so aus: Index: 0 - Wert: 15
-anzahl = array1.size
+
+i=0
+array1.size.times do
+	puts "Index: #{i} - Wert: #{array1[i]}"
+	i+=1
+end
 
 # c. erzeugen Sie in einem Block einen Hash, wobei Sie die Arraywerte als Index nutzen und als Wert eine Zufallszahl zwischen 100 und 200 speichern. 
+
+
 # d. Geben Sie diesen Hash anschließen etwa so aus: Index: 15 - Wert: 121
 # e. Ergänzen Sie die Ausgabe. Wenn der Wert größer als 150 ist, dann sieht die Ausgabe aus:  Index: 15 - Wert: 151. WOW
 # f. Durchlaufen Sie das Array und speichern Sie die Quadratzahlen in einem Array
