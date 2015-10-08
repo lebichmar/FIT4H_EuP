@@ -18,3 +18,5 @@ puts "#{name1}'s health is #{ergebnis/divisor}.\t\t\t\#Divisor9"
 puts "\nPlayers:\n\t#{name1}\n\t#{name2}\n\t#{name3}\n\n."
 
 
+
+
