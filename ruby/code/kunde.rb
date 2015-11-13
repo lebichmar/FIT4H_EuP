@@ -1,47 +1,37 @@
 class Kunde
 	
 	attr_accessor :name
-	attr_accessor :vorname
-	attr_accessor :adresse
+	attr_writer :adresse
+	attr_accessor :gehalt
 
 	def initialize(name, adresse='')
 		@name = name
 		@adresse = adresse
-		@kunden = []
-	end
-
-	def kunde (pvorname)
-		@vorname = pvorname	
 	end
 
 	def add_kunde(kunde)
-		@kunden << kunde
+		@kunden<<kunde
 	end
 
-	def bericht
-		puts "#{@name}"
+	def kunde_ausgabe									#hier werden keine Variablen übergeben, da Instanzvariablen
+		"Kunde:  #{@name}, #{@adresse}"
+	end
+
+	def alle_kunden
+		puts "#{@name}'s PLAYLIST"
 		@kunden.each do |kunde|
 			puts kunde
 		end
 	end
 
-# # def firstname=(pfirstname) 
-	# # 	@firstname = 	pfirstname
-	# # end
-	# attr_writer :firstname
-	attr_accessor :firstname
+	
 
-	# # def street=(pstreet) 
-	# # 	@street = pstreet	
-	# # end
-	# attr_writer :street
-	attr_accessor :street
-
-	# # def city=(pcity) 
-	# # 	@city = 	pcity
-	# # end
-	# attr_writer :city
-	attr_accessor :city
+	def bericht
+		puts "Test"
+		@kunden.each do |kunde|
+			puts kunde
+		end
+	end
 
 
 end

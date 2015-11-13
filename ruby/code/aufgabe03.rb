@@ -13,13 +13,13 @@ class Customer
 	# attr_writer :firstname
 	attr_accessor :firstname
 
-	# # def set_street=(pstreet) 
+	# # def street=(pstreet) 
 	# # 	@street = pstreet	
 	# # end
 	# attr_writer :street
 	attr_accessor :street
 
-	# # def set_city=(pcity) 
+	# # def city=(pcity) 
 	# # 	@city = 	pcity
 	# # end
 	# attr_writer :city

@@ -1,0 +1,6 @@
+<h1>Einzelabfrage</h1>
+<p><h4>Datensatz mit ID wird angezeigt</h4> </p>
+<%=	@event.name %>
+<%=	@event.location %>
+<%=	@event.start_at %>
+<%=	truncate(@event.description, length: 25, seperator: ' ') %>
