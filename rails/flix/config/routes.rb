@@ -1,6 +1,13 @@
 Rails.application.routes.draw do
+root "movies#index"                         #damit bei Eingabe von localhost:3000 auf die Index weitergeleitet wird
+resources :movies
 
-  get "movies" => "movies#index"
+  # get "movies" => "movies#index"
+  # get "movies/show"
+  # get "movies/index"
+
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

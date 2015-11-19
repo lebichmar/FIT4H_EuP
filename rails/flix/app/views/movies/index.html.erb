@@ -1,8 +1,12 @@
-
 <h1>Movies</h1>
+<p><%= link_to "Neuen Event erstellen", new_movie_path %></p>
 <h4>listing generated at: <%= Time.now %> </h4>
-<p>Zeige folgende  <%= @movies.size %> Movies an:
-	<table>
+
+<p>
+Es <%= @movies.count == 1 ? "ist" : " sind " %> <%= "#{pluralize(@movies.count, "Movie")}" %> vorhanden. 
+</p>
+
+	<table width="100%">
 		<tr>
 			<th>Titel</th>
 			<th>Rating</th>
@@ -11,6 +15,9 @@
 			<th>Erscheinungdatum</th>
 			<th>website</th>
 			<th>Pledging</th>
+			<th>Show</th>
+			<th>Edit</th>
+			<th>Delete</th>
 
 
 		</tr>	
@@ -20,11 +27,14 @@
 		<tr>			
 			<td><%= movie.title %></td>
 			<td><%= movie.rating %></td>
-			<td><%= number_to_currency(movie.total_gross, unit: "€") %></td>
+			<td><%= format_total_gross(movie)%></td>
 			<td><%= truncate(movie.description, length: 25, seperator: ' ') %></td>
-			<td><%= movie.released_on %></td>
-			<td><a href = "<% movie.website %>" > <%= movie.website %> </a></td>
+			<td><%= time_ago_in_words(movie.released_on) %></td>
+			<td><a href = "<%= movie.website %>" > <%= movie.website %> </a></td>
 			<td><%= movie.pledging_ends_on %></td>
+			<td><%= link_to "Show", movie_path(movie.id) %></td>
+			<td><%= link_to "Edit", edit_movie_path(movie.id) %> </td>
+			<td><%= link_to "Delete", movie_path(movie.id), method: :delete, data: {confirm: "Sind Sie sicher, dass Sie diesen Film löschen wollen?"} %> </td>
 
 
 

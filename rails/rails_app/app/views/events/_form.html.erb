@@ -1,0 +1,32 @@
+<%= form_for(@event) do |f| %>
+
+	<p>
+		<%=f.label :Name %>:
+		<%=f.text_field :name %>
+	</p>
+
+	<p>
+		<%=f.label :Beschreibung %>:
+		<%=f.text_area :description, :size => "30x5" %>
+	</p>
+
+	<p>
+		<%=f.label :Ort %>:
+		<%=f.text_field :location %>
+	</p>
+
+	<p>
+		<%=f.label :Preis %>:
+		<%=f.number_field :price %>
+	</p>
+
+	<p>
+		<%=f.label :Uhrzeit %>:
+		<%=f.datetime_select :start_at %>
+	</p>
+
+	<p>
+		<%=f.submit "Absenden" %>:
+	</p>
+
+<% end %>

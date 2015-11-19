@@ -30,3 +30,7 @@ Datensatz verändern:
 
 Datensatz löschen
 	e.destroy
+
+
+	Movie.create([{title: "", description: ""},{title: "", description: ""}, {.........})]
+	#mit dieser Verkettung kann man mehrere Datensätze gleichzeitig anlegen

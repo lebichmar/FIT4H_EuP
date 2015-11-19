@@ -1,0 +1,14 @@
+<h1>Einzelabfrage: <%= @movie.title %> </h1>
+<p><h4>Datensatz mit der ID <%=	@movie.id %> wird angezeigt</h4> </p>
+<h3>Titel?:</h3>
+<p><%= @movie.title %></p>
+
+
+<h3>Beschreibung?:</h3>
+<p> <%=	@movie.description %> </p>
+
+<h3>Umsatz?:</h3>
+<td><%= format_total_gross(@movie)%></td>
+
+
+<p><%= link_to "Back", movies_path %></p>

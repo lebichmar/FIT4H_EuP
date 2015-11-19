@@ -1,6 +1,22 @@
-<h1>Einzelabfrage</h1>
-<p><h4>Datensatz mit ID wird angezeigt</h4> </p>
-<%=	@event.name %>
-<%=	@event.location %>
-<%=	@event.start_at %>
-<%=	truncate(@event.description, length: 25, seperator: ' ') %>
+<h1>Einzelabfrage: <%=	@event.name %> </h1>
+<p><h4>Datensatz mit der ID <%=	@event.id %> wird angezeigt</h4> </p>
+<h3>Wann?:</h3>
+<p><%=	@event.start_at %></p>
+
+<h3>Veranstaltung?:</h3>
+<p> <%=	@event.description %> </p>
+
+<h3>Wo?:</h3>
+<p> <%=	@event.location %> </p>
+
+<h3>Preis?:</h3>
+<p><%= format_price(@event) %></p>
+
+
+<p><%= link_to "Back", events_path %></p>
+
+
+
+
+
+

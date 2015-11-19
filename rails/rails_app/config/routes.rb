@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
+root "events#index"                         #damit bei Eingabe von localhost:3000 auf die Index weitergeleitet wird
+resources :events
+  # get "events" => "events#index"
+  # get "events/:id" => "events#show"       #:id wird als key gesehen
 
-  get "events" => "events#index"
-  get "events/:id" => "events#show"       #:id wird als key gesehen
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
