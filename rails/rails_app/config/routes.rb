@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
 root "events#index"                         #damit bei Eingabe von localhost:3000 auf die Index weitergeleitet wird
-resources :events
+resources :events do
+  collection do
+    get "showall"
+  end
+end
+
   # get "events" => "events#index"
   # get "events/:id" => "events#show"       #:id wird als key gesehen
 

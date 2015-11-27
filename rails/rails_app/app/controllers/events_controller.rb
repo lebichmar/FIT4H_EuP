@@ -4,6 +4,11 @@ class EventsController < ApplicationController
 		@events = Event.upcoming
 	end
 
+	def showall			#macht man in der realen Applikation NICHT so!!
+		@events = Event.all
+	end
+
+
 	def show
 		@event = Event.find(params[:id])			#globale Parameter (sind alle enthalten)
 	end
@@ -25,8 +30,11 @@ class EventsController < ApplicationController
 
 	def create
 		@event = Event.new(event_params)
-		@event.save
-		redirect_to event_path(@event.id)
+		if @event.save
+			redirect_to event_path(@event.id)
+		else
+			render "new"
+		end
 	end
 
 	def destroy
@@ -38,7 +46,7 @@ class EventsController < ApplicationController
 
 	private 
 		def event_params
-		params.require(:event).permit(:name, :location, :description, :price, :start_at)		
+		params.require(:event).permit(:name, :location, :description, :price, :start_at, :image_file, :capacity)		
 		end
 
 	

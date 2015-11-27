@@ -1,42 +1,76 @@
 <%= form_for(@movie) do |f| %>
-
-	<p>
-		<%=f.label :Titel %>:
-		<%=f.text_field :title %>
-	</p>
-
-	<p>
-		<%=f.label :Rating %>:
-		<%=f.number_field :rating %>
-	</p>
-
-	<p>
-		<%=f.label :Umsätze %>:
-		<%=f.number_field :total_gross %>
-	</p>
-
-	<p>
-		<%=f.label :Beschreibung %>:
-		<%=f.text_area :description %>
-	</p>
-
-	<p>
-		<%=f.label :Erscheinungsdatum %>:
-		<%=f.datetime_select :released_on %>
-	</p>
-
-	<p>
-		<%=f.label :Web %>:
-		<%=f.text_field :website %>
-	</p>
 	
-	<p>
-		<%=f.label :Pledging %>:
-		<%=f.datetime_select :pledging_ends_on %>
-	</p>
+	<div class="row">
+		<div class="medium-2 columns">
+			<%=f.label :Titel %>
+		</div>
+		<div class="medium-10 columns">
+			<%=f.text_field :title %>		
+		</div>
+	</div>
 
-	<p>
-		<%=f.submit "Absenden" %>:
-	</p>
+	<div class="row">
+		<div class="medium-2 columns">
+			<%=f.label :Rating %>
+		</div>
+		<div class="medium-10 columns">
+			<%=f.number_field :rating %>		
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="medium-2 columns">
+			<%=f.label :Umsätze %>
+		</div>
+		<div class="medium-10 columns">
+			<%=f.number_field :total_gross %>
+		</div>
+	</div>
+	
+
+	<div class="row">
+		<div class="medium-2 columns">
+			<%=f.label :Beschreibung %>
+		</div>
+		<div class="medium-10 columns">
+			<%=f.text_area :description %>		
+		</div>
+	</div>
+	
+
+	<div class="row">
+		<div class="medium-2 columns">
+			<%=f.label :Erscheinungsdatum %>
+		</div>
+		<div class="medium-10 columns">
+			<%=f.datetime_select :released_on %>		
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="medium-2 columns">
+			<%=f.label :Web %>
+		</div>
+		<div class="medium-10 columns">
+			<%=f.text_field :website %>		
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="medium-2 columns">
+			<%=f.label :Pledging %>
+		</div>
+		<div class="medium-10 columns">
+			<%=f.datetime_select :pledging_ends_on %>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="medium-2 columns">
+		</div>
+		<div class="medium-10 columns">
+			<%=f.submit "Absenden" %>
+		</div>
+	</div>
 
 <% end %>
