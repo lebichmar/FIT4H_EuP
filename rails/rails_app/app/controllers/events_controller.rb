@@ -20,8 +20,11 @@ class EventsController < ApplicationController
 	def update
 		@event = Event.find(params[:id])
 		#man muss Parameter erlauben (Sicherheitsaspekt)
-		@event.update(event_params)
-		redirect_to event_path(@event.id)
+		if @event.update(event_params)
+			redirect_to event_path(@event.id)
+		else
+			render "edit"
+		end
 	end
 
 	def new
@@ -31,6 +34,7 @@ class EventsController < ApplicationController
 	def create
 		@event = Event.new(event_params)
 		if @event.save
+			flash[:notice] = "Ihre Daten wurden gespeichert."
 			redirect_to event_path(@event.id)
 		else
 			render "new"
@@ -50,5 +54,4 @@ class EventsController < ApplicationController
 		end
 
 	
-
 end

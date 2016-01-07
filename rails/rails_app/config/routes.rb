@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
+  
 root "events#index"                         #damit bei Eingabe von localhost:3000 auf die Index weitergeleitet wird
+
 resources :events do
+  resources :registrations
   collection do
     get "showall"
   end

@@ -1,0 +1,17 @@
+Verknüpfung von Tabellen:
+	Tabellen können über eine Verküpfung von PrimaryKey (events-Tabelle) zum ForeignKey (registrations-tabelle: event_id) erstellt werden.
+
+	"rails generate resource <review> name:string stars:integer comment:text movie:references"
+
+	Voraussetzungen:
+		a. ForeignKey muss in der abhängigen Tabelle vorhanden sein
+		b. models/event.rb
+				has_many :registrations
+		c. models/registrations
+				belongs_to :event
+
+Wenn es diese Verknüpfungen gibt, bildet Rails die zusätzlichen Methoden:
+	r = Registration.first
+	e = Event.first
+	r.event 					#zeigt den Event zur Registration
+	e.registrations  	#zeigt die Registrierung des Event an

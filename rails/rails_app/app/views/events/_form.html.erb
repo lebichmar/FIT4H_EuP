@@ -1,13 +1,6 @@
 <%= form_for(@event) do |f| %>
-	<%if @event.errors.any? %>
-		<div class="panel">
-			<ul>
-				<% @event.errors.full_messages.each do |message| %>
-					<li> <%= message %> </li>
-				<% end %>
-			</ul>	
-		</div>
-
+	
+<%= render "shared/errors", obj_errors: @event %> 		#Einbinden des errors.html.erb 
 		
 
 	<%	end %>

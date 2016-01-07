@@ -15,9 +15,13 @@ class MoviesController < ApplicationController
 	def update
 		@movie = Movie.find(params[:id])
 		#man muss Parameter erlauben (Sicherheitsaspekt)
-		@movie.update(movie_params)
-		redirect_to movie_path(@movie.id)
+		if @movie.update(movie_params)
+			redirect_to movie_path(@movie.id)
+		else
+			render "edit"
+		end
 	end
+
 
 	def new
 		@movie = Movie.new
@@ -25,9 +29,14 @@ class MoviesController < ApplicationController
 
 	def create
 		@movie = Movie.new(movie_params)
-		@movie.save
-		redirect_to movie_path(@movie.id)
+		if @movie.save
+			flash[:notice] = "Ihre Daten wurden gespeichert."
+			redirect_to movie_path(@movie.id)
+		else
+			render "new"
+		end
 	end
+
 
 	def destroy
 		@movie = Movie.find(params[:id])

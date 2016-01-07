@@ -1,0 +1,22 @@
+<table width=100%>
+	<tr>
+		<th>Name</th>
+		<th>Beschreibung</th>
+		<th>Ziel in Millionen</th>
+		<th>Website</th>
+		<th>Endet am</th>
+	</tr>
+
+<%=fundraisings.each do |p| %>
+	<tr>
+		<td> <%=p.name%> </td>
+		<td> <%=truncate(p.description, length: 30, seperator: ' ',omission:"") %> </td>
+		<td> <%=p.target_pledging_amount%> </td>
+		<td> <%=p.website%> </td>
+		<td> <%=p.pledging_ends_on%> </td>
+		<td> <%= link_to "Show", project_path(project.id) %> </td>
+		<td> <%= link_to "Edit", edit_project_path(project.id) %> </td>
+		<td> <%= link_to "Delete", project_path(project.id), method :delete, data: {confirm: Sind Sie sicher?} %> </td>
+	</tr>
+</table>
+

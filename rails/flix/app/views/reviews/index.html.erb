@@ -1,0 +1,21 @@
+<h1> Alle Reviews </h1>
+
+<table>
+	<tr>
+		<th>Name</th>  
+		<th>Sterne</th>
+		<th>Kommentar</th>
+		<th>Film</th>
+	</tr>
+
+<% @reviews.each do |review| %>
+	<tr>
+		<td><%= review.name %> </td>
+		<td><%= review.stars %> </td>
+		<td><%= review.comment %> </td>
+		<td><%= review.movie_id %> </td>
+	</tr>
+<% end %>
+
+</table>
+

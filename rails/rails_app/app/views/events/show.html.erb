@@ -2,6 +2,7 @@
 <h4>Datensatz mit der ID <%=	@event.id %> wird angezeigt</h4>
 </div>
 
+
 <div class="panel">	
 	<div class="row">
 		<div class="medium-3 columns">
@@ -65,8 +66,10 @@
 
 
 
-<p><%= link_to "Back", events_path %></p>
+<p><%= link_to "Back", events_path %> <br>
+<%= link_to "Registrierungen", event_registrations_path(@event.id) %>
 
+</p>
 
 
 

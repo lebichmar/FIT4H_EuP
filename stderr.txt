@@ -1,0 +1,3 @@
+find: "/etc/polkit-1/localauthority": Keine Berechtigung
+find: "/etc/cups/ssl": Keine Berechtigung
+find: "/etc/ssl/private": Keine Berechtigung

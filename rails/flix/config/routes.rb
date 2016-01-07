@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
+  
 root "movies#index"                         #damit bei Eingabe von localhost:3000 auf die Index weitergeleitet wird
-resources :movies
+resources :movies do
+  resources :reviews
+end
 
   # get "movies" => "movies#index"
   # get "movies/show"
