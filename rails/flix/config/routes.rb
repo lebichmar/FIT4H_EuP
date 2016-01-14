@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :users
 root "movies#index"                         #damit bei Eingabe von localhost:3000 auf die Index weitergeleitet wird
 resources :movies do
   resources :reviews
