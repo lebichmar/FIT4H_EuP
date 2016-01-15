@@ -11,6 +11,14 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
 
 
+  def require_signin
+  	unless current_user
+  		redirect_to signin_url, alert: "Erst einloggen du Esel!" 
+  	end	
+  end
+
+
+
 
 
 

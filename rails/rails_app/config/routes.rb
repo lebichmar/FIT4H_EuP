@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   root "events#index"           #damit bei Eingabe von localhost:3000 auf die Index weitergeleitet wird
+  
   get 'signup' => "users#new"   #named route
+  get 'signin' => "sessions#new"
+  delete 'logout' => "sessions#destroy"
+
   
   resources :users
   resources :sessions                       

@@ -6,13 +6,13 @@ class SessionsController < ApplicationController
 
 	def create
 		if user = User.authenticate(params[:email], params[:password])
-		session[:user_id] = user.id
-		flash[:notice] "Erfolgreich angemeldet!"
-		redirect_to movies_url
+			session[:user_id] = user.id
+			flash[:notice] "Erfolgreich angemeldet!"
+			redirect_to movies_url
 		else
 			flash.now[:alert] = "Anmeldedaten fehlerhaft!"
 			render :new
-		
+		end
 	end
 
 
