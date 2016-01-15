@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
-  root "events#index"
-  get 'signup' => "users#new"
+  root "events#index"           #damit bei Eingabe von localhost:3000 auf die Index weitergeleitet wird
+  get 'signup' => "users#new"   #named route
+  
   resources :users
-                         #damit bei Eingabe von localhost:3000 auf die Index weitergeleitet wird
+  resources :sessions                       
 
 resources :events do
   resources :registrations
