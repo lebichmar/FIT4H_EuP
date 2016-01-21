@@ -25,7 +25,7 @@ Vorgänge:
 			def create
 				@event = Event.new(event_params)
 			
-			#even_params ist eine Methode im gleichen Controller.
+			#event_params ist eine Methode im gleichen Controller.
 			Diese Methode enthält alle erlaubten Parameter. Dies ist ein Rails-sicherheisfeature.
 
 		def event_params

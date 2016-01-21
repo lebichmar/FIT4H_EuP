@@ -1,10 +1,11 @@
 Rails bringt die Voraussetzungen für eine Authentifizierung mit.
 	1. Aktivieren Sie in der Datei "Gemfile" das Gem "gem 'bcrypt', '~> 3.1.7'", in dem Sie das Kommentarzeichen entfernen. 
-	2. Das Model, das für die Authentifizierung verwendet wird, in unserem Beispiel User, ist die Angabe
+	2. Das Model, das für die Authentifizierung verwendet wird, in unserem Beispiel User, ist die Angabe... 
 			class User < ActiveRecord::Base
   		has_secure_password
 
-  nötig.
+  ... nötig.
+
   Damit stehen in diesem Model verschiedene Methoden zur Verschlüsselung und zur Authentifizierung zur Verfügung.
   3. Ein zentrales Attribut in dem Model is "password"
   Das kann beim Anlegen berücksichtigt werden:
