@@ -1,0 +1,15 @@
+
+
+<fieldset>
+	<legend><h2>Einzelabfrage</h2></legend>
+
+	<u>Titel:</u> <%= @project.title %> <br> <br>
+	<u>Beschreibung:</u><%= @project.description %> <br> <br>
+	<u>Startzeit:</u><%= @project.start_date %><br> <br>
+
+
+</fieldset>
+
+<%= link_to "Back", root_path %>
+
+<%= link_to "Back-Alternative", projects_path %>

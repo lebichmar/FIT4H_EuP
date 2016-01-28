@@ -9,7 +9,9 @@ Rails bringt die Voraussetzungen für eine Authentifizierung mit.
   Damit stehen in diesem Model verschiedene Methoden zur Verschlüsselung und zur Authentifizierung zur Verfügung.
   3. Ein zentrales Attribut in dem Model is "password"
   Das kann beim Anlegen berücksichtigt werden:
+  	
   	rails g model user email password:digest
+
   In jedem Fall muss in der Migration für das Feld attribut die Zeile stehen:
   		t.string :password_digest
   Dieser Eintrag sorgt dafür, dass in Kombination mir 'has_secure_password' der Passworteintrag in der Tabelle verschlüsselt wird.

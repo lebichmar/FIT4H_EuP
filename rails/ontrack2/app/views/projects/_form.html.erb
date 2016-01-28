@@ -1,0 +1,39 @@
+<%= form_for(@project) do |f| %>
+
+<div class="row">
+	<div class="medium-2 columns">
+		<%=f.label :Titel %>
+	</div>
+	<div class="medium-10 columns">
+		<%=f.text_field :title %>		<br/><br/>	
+	</div>
+</div>
+
+
+<div class="row">
+	<div class="medium-2 columns">
+		<%=f.label :Beschreibung %>
+	</div>
+	<div class="medium-10 columns">
+		<%=f.text_area :description %>	<br/>	<br/>	
+	</div>
+</div>
+
+<div class="row">
+	<div class="medium-2 columns">
+		<%=f.label :Startzeit %>
+	</div>
+	<div class="medium-10 columns">
+		<%=f.date_select :start_date %>	<br/>	<br/>	
+	</div>
+</div>
+
+<div class="row">
+	<div class="medium-2 columns">
+	</div>
+	<div class="medium-10 columns">
+		<%=f.submit "Absenden" %> <br/><br/>	
+	</div>
+</div>
+
+<% end %>
