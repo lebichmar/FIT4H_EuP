@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-before_action :set_project, only: [:edit, :show, :update]
+before_action :set_project, only: [:edit, :show, :update, :destroy]
 
 def index
 	@projects = Project.all
@@ -31,7 +31,8 @@ end
 
 
 def destroy
-	@project = Project.find(params [:id])
+	@movie.destroy
+	redirect_to movies_url
 end
 
 private
