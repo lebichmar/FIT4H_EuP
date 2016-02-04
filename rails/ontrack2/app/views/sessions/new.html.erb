@@ -1,0 +1,16 @@
+<fieldset> 
+<h1> <u> Anmelden </u> </h1>
+<%= form_tag sessions_path do %>
+	<%= label_tag "E-Mail" %> 
+	<%= text_field_tag :email %>
+
+<%= label_tag "Passwort" %> 
+	<%= password_field_tag :password %>
+
+
+<%= submit_tag "Anmelden" %> 
+	
+
+<% end %>
+
+</fieldset>

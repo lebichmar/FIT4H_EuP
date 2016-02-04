@@ -1,5 +1,7 @@
 <%= form_for(@project) do |f| %>
 
+<%= render "errors" %>
+
 <div class="row">
 	<div class="medium-2 columns">
 		<%=f.label :Titel %>
@@ -32,8 +34,15 @@
 	<div class="medium-2 columns">
 	</div>
 	<div class="medium-10 columns">
-		<%=f.submit "Absenden" %> <br/><br/>	
+		<% if request.path =="/projects/new" %>
+			<%=f.submit "Projekt anlegen" %> 
+		<% else %>
+			<%=f.submit "Projekt aktualisieren"%>
+		<% end %>	
 	</div>
 </div>
 
 <% end %>
+
+
+

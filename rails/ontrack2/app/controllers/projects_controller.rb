@@ -17,8 +17,11 @@ end
 
 
 def create
-	if 	@project = Project.create(permitted_params)
-			redirect_to project_path(@project.id)
+	@project = Project.new(permitted_params)
+	if 
+		@project.save
+		redirect_to project_path(@project.id)
+		flash[:notice] = "Der Datensatz wurde erfolgreich angelegt!"
 	else
 			render "new"
 	end	
@@ -26,13 +29,14 @@ end
 
 def update
 @project.update(permitted_params)
+flash[:notice] = "Der Datensatz wurde erfolgreich aktualisiert!"
 redirect_to root_path
 end
 
 
 def destroy
-	@movie.destroy
-	redirect_to movies_url
+	@project.destroy
+	redirect_to root_path
 end
 
 private
@@ -44,7 +48,6 @@ private
 	def set_project
 		@project = Project.find(params[:id])
 	end
-
 
 
 end

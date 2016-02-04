@@ -1,11 +1,15 @@
 <h2>Übersicht aller Projekte</h2>
 
+<hr />
+<%= button_to 'login', login_path%>
+<hr />
+
 <table width=100%>
 <tr>
 	<th>Title</th>
 	<th>Beschreibung</th>
 	<th>Startzeit</th>
-	<th colspan=3>Optionen</th>
+	<th colspan=4>Optionen</th>
 	
 
 </tr>
@@ -19,7 +23,8 @@
 	<td><%= project.start_date %></td>
 	<td><%= link_to 'Show', project_path(project.id)%></th></td>
 	<td><%= link_to 'Edit', edit_project_path(project.id)%></th></td>
-	<td><%= link_to 'Delete', project_path(project.id)%></th></td>
+	<td><%= link_to 'Delete', project_path(project.id), method: :delete, data: {confirm: "Sind Sie sicher, dass Sie diesen Datensatz löschen wollen?"}%></td>
+	<td><%= link_to 'Tasks', project_tasks_path(project.id)%></td>
 
 </tr>
 <% end %>
