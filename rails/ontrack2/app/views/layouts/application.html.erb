@@ -8,11 +8,17 @@
 </head>
 <body>
 
+<%= render "layouts/navigation" %>
+
 <% if flash.present? %>
 	<% flash.each do |key , value| %>
-		<%= content_tag(:div, value) %>
+		<%= content_tag(:div, value, class: "#{key}") %>
 	<% end %>
 <% end %>
+
+<div style="float:right;">
+
+</div>
 
 <%= yield %>
 

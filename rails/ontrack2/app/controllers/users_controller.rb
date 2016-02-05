@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-
+  before_action :require_correct_user, only: [:destroy, :update, :edit]
+  before_action :require_signin, except: [:create, :new]
+  
   # GET /users
   # GET /users.json
   def index
@@ -63,6 +65,17 @@ class UsersController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
+    
+    def require_correct_user
+      @user = User.find( params[:id] )
+      unless @user == current_user || current_user.admin?
+        #flash[:alert] = "Sie haben keine Rechte Änderungen vorzunehmen!"
+        redirect_to users_path, alert: "Fehler, Keine Berechtigung!"
+      end
+    end
+
+    def
+
     def set_user
       @user = User.find(params[:id])
     end

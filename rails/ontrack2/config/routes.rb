@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   
+  get 'registrieren' => 'users#new'
   
-  post 'login' => 'sessions#new' 
+  post 'login' => 'sessions#new'        #wegen des Buttons
+
+  get   'logout' => 'session#destroy'   #wegen link_to
   
   resources :sessions
   resources :users
